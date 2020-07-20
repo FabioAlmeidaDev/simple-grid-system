@@ -1,0 +1,26 @@
+@import "./widths";
+
+@mixin create-cols($append) {
+  @for $i from 1 through $grids {
+    $w: #{$i / $grids * 100 * 1%};
+    @if $append != "" {
+      .col-#{$append}-#{$i} {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 $w;
+        -ms-flex: 0 0 $w;
+        flex: 0 0 $w;
+        max-width: $w;
+        flex-wrap: wrap;
+      }
+    } @else {
+      .col-#{$i} {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 $w;
+        -ms-flex: 0 0 $w;
+        flex: 0 0 $w;
+        max-width: $w;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

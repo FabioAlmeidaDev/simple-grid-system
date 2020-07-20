@@ -1,0 +1,26 @@
+@import "./widths";
+
+@mixin create-margin($append) {
+  @for $i from 0 through 10 {
+    $v: #{$i * 5px};
+    $k: $i * 5;
+    @if $append != "" {
+      $k: #{$append}-#{$k};
+    }
+    .margin-#{$k} {
+      margin: $v;
+    }
+    .margin-left-#{$k} {
+      margin-left: $v !important;
+    }
+    .margin-right-#{$k} {
+      margin-right: $v !important;
+    }
+    .margin-top-#{$k} {
+      margin-top: $v !important;
+    }
+    .margin-bottom-#{$k} {
+      margin-bottom: $v !important;
+    }
+  }
+}

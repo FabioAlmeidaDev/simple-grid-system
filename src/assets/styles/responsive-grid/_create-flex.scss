@@ -1,0 +1,15 @@
+@import "./widths";
+
+@mixin create-flex($append) {
+  @for $i from 1 through $grids {
+    @if $append != "" {
+      .flex-#{$append}-#{$i} {
+        flex: $i;
+      }
+    } @else {
+      .flex-#{$i} {
+        flex: $i;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "scheduling",
+  "name": "simple-grid-system",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
+    "vue-material": "^1.0.0-beta-14",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0"
   },

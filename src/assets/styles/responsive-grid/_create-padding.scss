@@ -1,0 +1,26 @@
+@import "./widths";
+
+@mixin create-padding($append) {
+  @for $i from 0 through 10 {
+    $v: #{$i * 5px};
+    $k: $i * 5;
+    @if $append != "" {
+      $k: #{$append}-#{$k};
+    }
+    .padding-#{$k} {
+      padding: $v;
+    }
+    .padding-left-#{$k} {
+      padding-left: $v;
+    }
+    .padding-right-#{$k} {
+      padding-right: $v;
+    }
+    .padding-top-#{$k} {
+      padding-top: $v;
+    }
+    .padding-bottom-#{$k} {
+      padding-bottom: $v;
+    }
+  }
+}

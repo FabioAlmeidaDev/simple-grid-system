@@ -1,0 +1,16 @@
+@import "./widths";
+
+@mixin create-offsets($append) {
+  @for $i from 1 through $grids {
+    $w: #{$i / $grids * 100 * 1%};
+    @if $append != "" {
+      .offset-#{$append}-#{$i} {
+        margin-left: $w;
+      }
+    } @else {
+      .offset-#{$i} {
+        margin-left: $w;
+      }
+    }
+  }
+}

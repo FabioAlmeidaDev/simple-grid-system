@@ -1,0 +1,63 @@
+/*
+* author: Fabio Almeida
+*/
+
+@import "./variables";
+@import "./create-cols";
+@import "./create-flex";
+@import "./create-offset";
+@import "./create-padding";
+@import "./create-margin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $containerPadding;
+}
+[class*="col-"],
+[class*="flex-"] {
+  display: inline-flex;
+  padding: $colPadding;
+  &.no-padding {
+    padding: $colPadding * 0;
+  }
+  width: 100%;
+}
+.container-fluid {
+  width: 100%;
+  padding: $containerPadding;
+  margin-right: auto;
+  margin-left: auto;
+}
+.no-padding {
+  padding: 0px;
+}
+.no-margin {
+  margin: 0px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+@each $key, $value in $mediaQuery {
+  @media (min-width: $value) {
+    .container {
+      width: $value - ($colPadding * 2);
+    }
+    .hidden-#{$key} {
+      display: none;
+    }
+    @include create-cols($key);
+    @include create-offsets($key);
+    @include create-flex($key);
+    @include create-margin($key);
+    @include create-padding($key);
+  }
+}

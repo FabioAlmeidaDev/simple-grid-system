@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/col">Columns</router-link>|
+      <router-link to="/flex">Flex</router-link>|
+      <router-link to="/offset">Offset</router-link>|
+      <router-link to="/margin">Margin</router-link>|
+      <router-link to="/padding">Padding</router-link>
     </div>
-    <router-view/>
+
+    <router-view />
   </div>
 </template>
 
@@ -30,3 +35,8 @@
   color: #42b983;
 }
 </style>
+
+<script>
+import Vue from "vue";
+export default {};
+</script>
